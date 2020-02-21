@@ -12,3 +12,4 @@ buildNumber.properties
 hadoop/.classpath
 hadoop/.project
 hadoop/.settings/
+hadoop/bin/
