@@ -10,7 +10,14 @@
 		<h2>Input Files</h2>
 		
 		<ul th:each="file: ${inputFiles}">
-			<li th:text="${file.pathSuffix}"></li>
+			<li>
+				<form action="#" th:action="@{/process}" th:object="${fileToProcess}" method="post">
+					<input type="hidden" id="fileName" name="fileName" th:value="${file.pathSuffix}" />
+					<input type="submit" value="Process" />
+				</form>
+				
+				<span th:text="${file.pathSuffix}"></span>
+			</li>
 		</ul>
 		
 		<h2>Output Files</h2>
