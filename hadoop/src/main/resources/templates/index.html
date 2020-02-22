@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MissionRunner Analytics Dashboard</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+	<body>
+		<h1>MissionRunner Analytics Dashboard</h1>
+		
+		<h2>Input Files</h2>
+		
+		<ul th:each="file: ${inputFiles}">
+			<li th:text="${file.pathSuffix}"></li>
+		</ul>
+		
+		<h2>Output Files</h2>
+		
+		<ul th:each="file: ${outputFiles}">
+			<li th:text="${file.pathSuffix}"></li>
+		</ul>
+	</body>
+</html>
