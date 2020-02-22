@@ -1,18 +1,25 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>MissionRunner Analytics Dashboard</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    
+    <title>MissionRunner Analytics Dashboard</title>
 </head>
 	<body>
-		<h1>MissionRunner Analytics Dashboard</h1>
-		
-		<h2>Error</h2>
-		
-		<div th:text="${errorMessage}"></div>
-		
-		<p>
-			<a href="/">Back</a>
-		</p>
+		<div class="container">
+			<h1>MissionRunner Analytics Dashboard</h1>
+			
+			<h2>Error</h2>
+			
+			<div th:text="${errorMessage}"></div>
+			
+			<p>
+				<a href="/">Back</a>
+			</p>
+		</div>
 	</body>
 </html>

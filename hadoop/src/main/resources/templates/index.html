@@ -1,29 +1,41 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>MissionRunner Analytics Dashboard</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    
+    <title>MissionRunner Analytics Dashboard</title>
 </head>
 	<body>
-		<h1>MissionRunner Analytics Dashboard</h1>
+		<div class="container">
+			<h1>MissionRunner Analytics Dashboard</h1>
 		
-		<h2>Input Files</h2>
-		
-		<ul th:each="file: ${inputFiles}">
-			<li>
-				<form action="#" th:action="@{/process}" th:object="${fileToProcess}" method="post">
-					<input type="hidden" id="fileName" name="fileName" th:value="${file.pathSuffix}" />
-					<input type="submit" value="Process" />
-				</form>
+			<div>
+				<h3>Input Files</h3>
 				
-				<span th:text="${file.pathSuffix}"></span>
-			</li>
-		</ul>
-		
-		<h2>Output Files</h2>
-		
-		<ul th:each="file: ${outputFiles}">
-			<li><a th:href="'/get/' + ${file.pathSuffix}" th:text="${file.pathSuffix}"></a></li>
-		</ul>
+				<div th:each="file: ${inputFiles}" class="row">
+					<div class="col-1">
+						<form action="#" th:action="@{/process}" th:object="${fileToProcess}" method="post">
+							<input type="hidden" id="fileName" name="fileName" th:value="${file.pathSuffix}" />
+							<input type="submit" value="Process" />
+						</form>
+					</div>
+					<div class="col">
+						<span th:text="${file.pathSuffix}"></span>
+					</div>
+				</div>
+			</div>
+			
+			<div>
+				<h3>Output Files</h3>
+				
+				<ul th:each="file: ${outputFiles}">
+					<li><a th:href="'/get/' + ${file.pathSuffix}" th:text="${file.pathSuffix}"></a></li>
+				</ul>
+			</div>
+		</div>
 	</body>
 </html>
