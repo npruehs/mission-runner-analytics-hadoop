@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MissionRunner Analytics Dashboard</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+	<body>
+		<h1>MissionRunner Analytics Dashboard</h1>
+		
+		<h2 th:text="${fileName}"></h2>
+		
+		<div>
+			<table>
+				<tr>
+					<th>Event</th>
+					<th>Count</th>
+				</tr>
+				
+				<tr th:each="eventWithCount: ${eventsWithCount}">
+					<td th:text="${eventWithCount.getEventId()}"></td>
+					<td th:text="${eventWithCount.getCount()}"></td>
+				</tr>
+			</table>
+		</div>
+		
+		<p>
+			<a href="/">Back</a>
+		</p>
+	</body>
+</html>
