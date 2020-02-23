@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>de.npruehs.missionrunner.analytics</groupId>
 	<artifactId>hadoop</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>hadoop</name>
 	<description>Demo project for Spring Boot</description>
 
